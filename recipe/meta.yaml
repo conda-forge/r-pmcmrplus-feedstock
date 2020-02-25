@@ -78,7 +78,6 @@ about:
 extra:
   recipe-maintainers:
     - conda-forge/r
-    - apcamargo
 
 # Package: PMCMRplus
 # Type: Package
