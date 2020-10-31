@@ -1,4 +1,4 @@
-{% set version = "1.6.1" %}
+{% set version = "1.7.0" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,7 +10,7 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/PMCMRplus_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/PMCMRplus/PMCMRplus_{{ version }}.tar.gz
-  sha256: 86b226623f02845b681558a6e5a7f9f219b557ed56a71d5b475cb2e148827153
+  sha256: 86a9f419a57e8d12691f068308c04efe7b29c19e88f1514d3d973908370d5a2b
 
 build:
   merge_build_host: true  # [win]
