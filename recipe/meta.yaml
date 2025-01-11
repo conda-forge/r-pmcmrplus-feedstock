@@ -12,7 +12,7 @@ source:
   sha256: 5ec1a1bce07802bb41907a0599b4b759e9afde2a24564e9d3b2bee93e7e595b1
 
 build:
-  number: 0
+  number: 1
   rpaths:
     - lib/R/lib/
     - lib/
@@ -30,6 +30,15 @@ requirements:
     - {{ posix }}sed               # [win]
     - {{ posix }}coreutils         # [win]
     - {{ posix }}zip               # [win]
+    - cross-r-base {{ r_base }}    # [build_platform != target_platform]
+    - r-bwstest >=0.2.1            # [build_platform != target_platform]
+    - r-mass                       # [build_platform != target_platform]
+    - r-rmpfr                      # [build_platform != target_platform]
+    - r-suppdists                  # [build_platform != target_platform]
+    - r-gmp                        # [build_platform != target_platform]
+    - r-ksamples >=1.2.7           # [build_platform != target_platform]
+    - r-multcompview               # [build_platform != target_platform]
+    - r-mvtnorm >=1.0              # [build_platform != target_platform]
   host:
     - r-base
     - r-bwstest >=0.2.1
@@ -65,7 +74,6 @@ about:
     tests (Jonckheere test, Cuzick test, Johnson-Mehrotra test, Spearman test) are included.  In addition, a Friedman-test for one-way ANOVA with repeated  measures on ranks (CRBD) and Skillings-Mack test for unbalanced  CRBD is provided with consequent all-pairs tests (Nemenyi test,  Siegel test, Miller test, Conover test,
     Exact test) and many-to-one tests (Nemenyi test, Demsar test, Exact test).  A trend can be tested with Pages's test. Durbin's test  for a two-way balanced incomplete block design (BIBD) is given  in this package as well as Gore's test for CRBD with multiple observations per cell is given.  Outlier tests, Mandel's k-
     and h statistic as well as functions for Type I error and Power  analysis as well as generic summary, print and plot methods  are provided.
-  license_family: GPL3
   license_file:
     - {{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-3
 
